@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:time_tracker/app/sign_in/email_sign_in_bloc.dart';
 import 'package:time_tracker/app/sign_in/email_sign_in_model.dart';
-import 'package:time_tracker/app/sign_in/validators.dart';
 import 'package:time_tracker/common_widgets/form_submit_button.dart';
 import 'package:time_tracker/common_widgets/show_exception_alert_dialog.dart';
 import 'package:time_tracker/services/auth.dart';
@@ -90,7 +89,7 @@ class _EmailSignInFormBlocBasedState extends State<EmailSignInFormBlocBased> {
         height: 8.0,
       ),
       TextButton(
-        child: Text(model!.secondaryButtonText),
+        child: Text(model.secondaryButtonText),
         onPressed: !model.isLoading ? _toggleFormType : null,
       )
     ];

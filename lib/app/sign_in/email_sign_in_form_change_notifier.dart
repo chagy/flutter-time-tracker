@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:time_tracker/app/sign_in/email_sign_in_change_model.dart';
-import 'package:time_tracker/app/sign_in/email_sign_in_model.dart';
 import 'package:time_tracker/common_widgets/form_submit_button.dart';
 import 'package:time_tracker/common_widgets/show_exception_alert_dialog.dart';
 import 'package:time_tracker/services/auth.dart';
@@ -83,7 +82,7 @@ class _EmailSignInFormChangeNotifierState
         height: 8.0,
       ),
       FormSubmitButton(
-        text: model!.primaryButtonText,
+        text: model.primaryButtonText,
         color: Colors.white,
         onPressed: !model.canSubmit ? _submit : () => {},
       ),
@@ -91,7 +90,7 @@ class _EmailSignInFormChangeNotifierState
         height: 8.0,
       ),
       TextButton(
-        child: Text(model!.secondaryButtonText),
+        child: Text(model.secondaryButtonText),
         onPressed: !model.isLoading ? _toggleFormType : null,
       )
     ];
@@ -104,7 +103,7 @@ class _EmailSignInFormChangeNotifierState
       decoration: InputDecoration(
         labelText: 'Email',
         hintText: 'test@email.com',
-        errorText: model!.emailErrorText,
+        errorText: model.emailErrorText,
         enabled: model.isLoading == false,
       ),
       autocorrect: false,
@@ -121,7 +120,7 @@ class _EmailSignInFormChangeNotifierState
       focusNode: _passwordFocusNode,
       decoration: InputDecoration(
         labelText: 'Password',
-        errorText: model!.passwordErrorText,
+        errorText: model.passwordErrorText,
         enabled: model.isLoading == false,
       ),
       obscureText: true,
